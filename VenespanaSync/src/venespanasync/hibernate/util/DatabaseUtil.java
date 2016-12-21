@@ -8,6 +8,7 @@ package venespanasync.hibernate.util;
 import javax.persistence.EntityManager;
 import org.hibernate.HibernateException;
 
+
 /**
  *
  * @author henry
@@ -60,7 +61,7 @@ public class DatabaseUtil {
     public static EntityManager getEntityManager() throws HibernateException {
         openDatabase();
         if (isHibernate) {
-            return HibernateUtil.getSession();
+            return (EntityManager) HibernateUtil.getSession();
         } else {
             return OpenJPAUtil.getEntityManager();
         }
@@ -69,7 +70,7 @@ public class DatabaseUtil {
     public static EntityManager getCurrentEntityManager() {
         openDatabase();
         if (isHibernate) {
-            return HibernateUtil.getCurrentSession();
+            return (EntityManager) HibernateUtil.getCurrentSession();
         } else {
             return OpenJPAUtil.getCurrentEntityManager();
         }

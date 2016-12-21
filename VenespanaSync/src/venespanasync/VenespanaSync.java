@@ -1,7 +1,6 @@
 package venespanasync;
 
 import javax.persistence.EntityManager;
-import org.hibernate.criterion.CriteriaQuery;
 import venespanasync.hibernate.util.DatabaseUtil;
 
 /**
